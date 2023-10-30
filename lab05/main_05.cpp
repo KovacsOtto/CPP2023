@@ -1,6 +1,14 @@
 #include <iostream>
+#include "quiz.h"
+#include "quizgame.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, Lab_05" << std::endl;
+    Quiz quiz("Quiz");
+    quiz.ReadinQuestionsFromFile("Kviz.txt");
+    QuizGame quizGame;
+    quizGame.playQuiz(quiz);
+
     return 0;
 }
