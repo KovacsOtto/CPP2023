@@ -14,7 +14,7 @@ Matrix::Matrix(int mRows, int mCols) {
     }
 }
 
-Matrix::Matrix(const Matrix &what) {
+Matrix::Matrix(const Matrix &what) {//copy constructor
     this->mRows = what.mRows;
     this->mCols = what.mCols;
     this->mElements = new double*[mRows];
@@ -26,7 +26,7 @@ Matrix::Matrix(const Matrix &what) {
     }
 }
 
-Matrix::Matrix(Matrix &&what) {
+Matrix::Matrix(Matrix &&what) {//move constructor
     this->mRows = what.mRows;
     this->mCols = what.mCols;
     this->mElements = what.mElements;
