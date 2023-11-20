@@ -4,6 +4,8 @@
 #include <cstring>
 #include <random>
 #include "Account.h"
+#include "Customer.h"
+#include "Bank.h"
 
 using namespace std;
 
@@ -144,5 +146,27 @@ int main() {
     cout << account << endl;
     account.withdraw(1000);
     cout << account << endl;
+    //Extra 2.feladat
+    cout << "Extra 2.feladat" << endl;
+//    Customer customer1("John", "Doe");
+//    customer1.newAccount(0);
+//    customer1.newAccount(1000);
+//    cout << customer1 << endl;
+    Bank bank1("Bank1");
+    bank1.loadCustomers("customers.txt");
+    bank1.printCustomers();
+    bank1.getCustomer(0).newAccount(1000);
+    bank1.getCustomer(0).getAccount(0).deposit(1000);
+    bank1.getCustomer(0).newAccount(300);
+    bank1.getCustomer(0).getAccount(1).deposit(1000);
+    bank1.getCustomer(1).newAccount(200);
+    bank1.getCustomer(1).getAccount(2).withdraw(400);
+    bank1.getCustomer(1).newAccount(100);
+    bank1.getCustomer(1).getAccount(3).withdraw(400);
+    bank1.getCustomer(2).newAccount(10000);
+    bank1.getCustomer(2).getAccount(4).withdraw(400);
+    bank1.getCustomer(2).newAccount(321);
+    bank1.getCustomer(2).getAccount(5).withdraw(400);
+    bank1.printCustomersAndAccounts();
     return 0;
 }
