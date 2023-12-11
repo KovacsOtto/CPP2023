@@ -1,6 +1,13 @@
 #include <iostream>
+#include "Settlement.h"
+#include "SettlementStatisticsImpl.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, Lab_12" << std::endl;
+    SettlementStatisticsImpl ss;
+    ss.readSettlementsFromFile("telepulesek.txt");
+    ss.addSettlement(Settlement("Budapest", "Budapest", 100));
+    cout << ss;
     return 0;
 }
